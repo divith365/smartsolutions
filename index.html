@@ -1708,8 +1708,9 @@
     teamObserver.observe(card);
     card.addEventListener('mouseenter', () => {
       resetSkills(card);
-      void card.offsetWidth; // force reflow
-      loadSkills(card);
+      setTimeout(() => {
+        loadSkills(card);
+      }, 50);
     });
   });
 
